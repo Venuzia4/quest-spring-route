@@ -16,13 +16,14 @@ public class DoctorController {
         if(number==13){
         return new Doctor(13,"Jodie Whittaker");
     } else{
-            if(number==0 || number >=42 ){
-
-                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossible de récupérer l'incarnation "+ number);
-
-            }else{
+            if(number>=1 || number <=12 ){
 
                 throw new ResponseStatusException(HttpStatus.SEE_OTHER, "See Other");
+
+
+
+            }else{
+                throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Impossible de récupérer l'incarnation "+ number);
 
 
             }
